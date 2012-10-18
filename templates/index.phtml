@@ -1,0 +1,34 @@
+<!DOCTYPE html> 
+<html> 
+	<head> 
+	<title>Lolla Picks - An unofficial app of Lollapalooza</title> 
+	<meta name="viewport" content="width=device-width; initial-scale=1.0; minimum-scale=1.0; maximum-scale=1.0; user-scalable=0;"/>
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.css" />
+        <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+        <script src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js"></script>
+        <link rel="icon" type="image/ico" href="favicon.ico"/>
+</head> 
+<body> 
+
+<div data-role="page">
+	<div data-role="header">
+	    <h1>Lolla Picks Unofficial</h1>
+	</div><!-- /header -->
+	<div data-role="content">
+            <a href="artists.php" data-role="button" data-transition="slide">Request a song</a>
+            <ul data-role="listview" data-inset="true" >
+		<li data-role="list-divider">Top 10 requests:</li>
+                {% for item in requests %}
+                <li>{{ item[0] }} - {{ item[1] }}<span class="ui-li-count">{{ item[2] }}</span></li>
+                {% endfor %}
+	    </ul>
+            <div data-role="controlgroup">
+            <a href="about.html" data-role="button" data-transition="slide">About</a>
+            <a href="contact.html" data-role="button" data-transition="slide">Contact Us</a>
+            </div>
+	    Disclaimer: This app was not developed by and has not been endorsed by the producers of Lollapalooza Music Festival. There is no guarantee that the use of this app will or will not affect the performances of any artist mentioned in this app.
+	</div><!-- /content -->
+</div><!-- /page -->
+    
+</body>
+</html>
